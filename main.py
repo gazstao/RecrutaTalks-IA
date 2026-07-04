@@ -45,12 +45,35 @@ def chat(message, history, thread_id):
     last_response = response['messages'][-1].content
     return last_response   
 
-with gr.Blocks() as demo:
+with gr.Blocks(title="Chatbot com Ollama", fill_height=True) as demo:
+    
     UniqueID =  lambda: str(uuid.uuid4())
     uid = UniqueID()
     print("Novo chat iniciado: ", uid)
     thread_id = gr.State(value = str(uid))
-    gr.Markdown("## Chatbot com LangChain e Ollama <h6>"+ uid+"</h6>")
-    gr.ChatInterface(fn=chat, additional_inputs=[thread_id])
 
-demo.launch()
+    gr.Markdown("# Chatbot com LangChain + Ollama")
+    gr.Markdown(f"**ID da conversa:** {uid}")
+
+    gr.ChatInterface(
+        fn=chat,
+        additional_inputs=[thread_id],
+        fill_height=True,           # ← Mais importante
+        title="Assistente de Inteligencia Artificial",
+        description="Modelo: " + model,
+        cache_examples=False
+    )
+
+demo.launch(
+    server_name="0.0.0.0",   # para acessar de outros dispositivos na rede
+    server_port=7860,
+    height=1000
+)
+
+# with gr.Blocks() as demo:
+#    UniqueID =  lambda: str(uuid.uuid4())
+#    uid = UniqueID()
+#    print("Novo chat iniciado: ", uid)
+#    thread_id = gr.State(value = str(uid))
+#    gr.Markdown("## Chatbot com LangChain e Ollama <h6>"+ uid+"</h6>")
+#    gr.ChatInterface(fn=chat, additional_inputs=[thread_id])
