@@ -43,8 +43,8 @@ Um chatbot conversacional poderoso construído com **LangChain**, **Ollama** (mo
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/SEU_USUARIO/nome-do-repo.git
-cd nome-do-repo
+git clone https://github.com/gazstao/RecrutaTalks-IA
+cd RecrutaTalks-IA
 
 # 2. Crie o ambiente virtual
 python -m venv .venv
