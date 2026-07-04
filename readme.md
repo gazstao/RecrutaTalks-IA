@@ -145,4 +145,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 
 **Made with ❤️ by Gazstao 2026 - Based on [Ardit Sulce Python Udemy Course](https://www.udemy.com/course/the-python-mega-course)**
 
-```
