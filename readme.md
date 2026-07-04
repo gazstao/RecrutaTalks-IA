@@ -80,7 +80,7 @@ ollama pull gemma3:12b     # ou qwen3.5:9b, llama3.2, etc.
 ## ▶️ Como Executar
 
 ```bash
-python app.py
+python main.py
 ```
 
 Acesse o link que aparecer no terminal (geralmente `http://127.0.0.1:7860`).
@@ -91,7 +91,7 @@ Acesse o link que aparecer no terminal (geralmente `http://127.0.0.1:7860`).
 
 ```
 /
-├── app.py                 # Arquivo principal
+├── main.py                 # Arquivo principal
 ├── chatbot_memory.db      # Banco de memória (gerado automaticamente)
 ├── .env                   # Variáveis de ambiente
 ├── requirements.txt
