@@ -56,7 +56,7 @@ python -m venv .venv
 # source .venv/bin/activate
 
 # 4. Instale as dependências
-pip install --upgrade langchain langchain-core langgraph langchain-ollama langchain-community gradio python-dotenv tavily-python
+pip install --upgrade langchain langchain-core langgraph langchain-ollama langchain-community gradio python-dotenv tavily-python langgraph-checkpoint-sqlite
 ```
 
 ---
