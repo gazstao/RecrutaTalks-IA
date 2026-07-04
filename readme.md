@@ -146,16 +146,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 **Made with ❤️ by Gazstao 2026 - Based on [Ardit Sulce Python Udemy Course](https://www.udemy.com/course/the-python-mega-course)**
 
 ```
-
----
-
-### Como usar:
-
-1. Copie todo o conteúdo acima
-2. Crie um arquivo `README.md` na raiz do seu projeto
-3. Cole o conteúdo
-4. Substitua:
-   - `SEU_USUARIO`
-   - `nome-do-repo`
-
-Quer que eu também gere um `requirements.txt` e ajuste o código atual (ele tem alguns pequenos problemas, como a ferramenta `get_date` sem decorator)?
