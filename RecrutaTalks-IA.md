@@ -1,4 +1,4 @@
-# Palestra sobre forças e fraquezas da IA: criação de ferramentas e agentes e ataques adversariais. RecrutaTalks Julho de 2026.
+Palestra sobre forças e fraquezas da IA: criação de ferramentas e agentes e ataques adversariais. RecrutaTalks Julho de 2026.
 ---
 # Código: Chatbot Inteligente com LangChain + Ollama + Gradio
 
@@ -109,6 +109,7 @@ O assistente pode:
 
 **Exemplo de interação:**
 - "Que dia é hoje?"
+- "Quais as principais notícias de hoje?"
 - "Qual a situação atual do mercado de criptomoedas?"
 - "Me explique como funciona o LangGraph"
 
