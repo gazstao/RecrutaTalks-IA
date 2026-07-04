@@ -1,4 +1,6 @@
 # Palestra sobre forças e fraquezas da IA: criação de ferramentas e agentes e ataques adversariais. RecrutaTalks Julho de 2026.
++
+---
 # Código: Chatbot Inteligente com LangChain + Ollama + Gradio
 
 Um chatbot conversacional poderoso construído com **LangChain**, **Ollama** (modelos locais) e interface amigável com **Gradio**. Possui memória persistente, ferramentas (tools) e suporte a múltiplas conversas.
