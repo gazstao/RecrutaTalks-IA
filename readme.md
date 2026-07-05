@@ -95,6 +95,7 @@ Acesse o link que aparecer no terminal (geralmente `http://127.0.0.1:7860`).
 ├── chatbot_memory.db      # Banco de memória (gerado automaticamente)
 ├── .env                   # Variáveis de ambiente
 ├── requirements.txt
+├── adversarial.js         # Ataques adversariais: Txs to https://kennysong.github.io/adversarial.js/
 └── README.md
 ```
 
@@ -133,7 +134,7 @@ O assistente pode:
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Sinta-se à vontade para usar e modificar.
+Este projeto está sob a licença GPL 3.0. Sinta-se à vontade para usar e modificar.
 
 ---
 
@@ -143,5 +144,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 
 ---
 
-**Made with ❤️ by Gazstao 2026 - Based on [Ardit Sulce Python Udemy Course](https://www.udemy.com/course/the-python-mega-course)**
+**Made with ❤️ by Gazstao 2026
+Agent based on [Ardit Sulce Python Udemy Course](https://www.udemy.com/course/the-python-mega-course)
+Adversarial Attacks [https://kennysong.github.io/adversarial.js/](https://kennysong.github.io/adversarial.js/)**
 
