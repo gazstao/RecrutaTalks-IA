@@ -118,7 +118,7 @@ O assistente pode:
 
 ## 🔧 Personalização
 
-- Para mudar o modelo: altere a variável `model` no arquivo `app.py`
+- Para mudar o modelo: altere a variável `model` no arquivo `main.py`
 - Para adicionar novas ferramentas: crie funções com o decorator `@tool` e adicione na lista de tools
 - Para ajustar o comportamento: modifique o `system_prompt`
 
