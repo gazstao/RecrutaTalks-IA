@@ -22,7 +22,6 @@ search_tool = TavilySearchResults()
 conn = sqlite3.connect('chatbot_memory.db', check_same_thread=False)
 checkpointer = SqliteSaver(conn)
 
-
 llm = ChatOllama(model=model, temperature=temperature)
 
 system_prompt = """
@@ -58,14 +57,15 @@ with gr.Blocks(title="Chatbot com Ollama", fill_height=True) as demo:
     gr.ChatInterface(
         fn=chat,
         additional_inputs=[thread_id],
-        fill_height=True,           # ← Mais importante
+        fill_height=True, 
         title="Assistente de Inteligencia Artificial",
         description="Modelo: " + model,
         cache_examples=False
     )
 
 demo.launch(
-    server_name="0.0.0.0",   # para acessar de outros dispositivos na rede
+    # server_name="0.0.0.0",    para acessar de outros dispositivos na rede
+    server_name="localhost",
     server_port=7860,
     height=1000
 )
