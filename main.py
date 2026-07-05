@@ -1,4 +1,5 @@
 from langchain.agents import create_agent
+from langchain_google_genai import data
 from langchain_ollama import ChatOllama
 from datetime import datetime
 import gradio as gr
@@ -7,6 +8,7 @@ import sqlite3
 import uuid
 from langchain_community.tools.tavily_search import TavilySearchResults
 from dotenv import load_dotenv
+import pprint
 
 load_dotenv()
 
@@ -41,7 +43,7 @@ agent = create_agent(
 def chat(message, history, thread_id):
     config = {"configurable": {"thread_id": thread_id}}
     response = agent.invoke({"messages": [{"role": "user", "content": message}]}, config)
-    print("Respomse: ", response)
+    pprint.pprint(response)
     last_response = response['messages'][-1].content
     return last_response   
 
@@ -78,3 +80,10 @@ demo.launch(
 #    thread_id = gr.State(value = str(uid))
 #    gr.Markdown("## Chatbot com LangChain e Ollama <h6>"+ uid+"</h6>")
 #    gr.ChatInterface(fn=chat, additional_inputs=[thread_id])
+
+# def chat(message, history, thread_id):
+#    config = {"configurable": {"thread_id": thread_id}}
+#    response = agent.invoke({"messages": [{"role": "user", "content": message}]}, config)
+#    print(response)
+#    last_response = response['messages'][-1].content
+#    return last_response   
