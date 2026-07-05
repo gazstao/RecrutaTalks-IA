@@ -41,6 +41,7 @@ agent = create_agent(
 def chat(message, history, thread_id):
     config = {"configurable": {"thread_id": thread_id}}
     response = agent.invoke({"messages": [{"role": "user", "content": message}]}, config)
+    print("Respomse: ", response)
     last_response = response['messages'][-1].content
     return last_response   
 
@@ -51,7 +52,7 @@ with gr.Blocks(title="Chatbot com Ollama", fill_height=True) as demo:
     print("Novo chat iniciado: ", uid)
     thread_id = gr.State(value = str(uid))
 
-    gr.Markdown("# Chatbot com LangChain + Ollama")
+    gr.Markdown("# RecrutaTalks - Julho de 2026 - Chatbot com LangChain + Ollama")
     gr.Markdown(f"**ID da conversa:** {uid}")
 
     gr.ChatInterface(
