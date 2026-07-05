@@ -2,4 +2,6 @@
 .venv/
 .vscode/
 .gradio/
-chatbot_memory.*
+chatbot_memory.db
+chatbot_memory.db-shm
+chatbot_memory.db-wal
