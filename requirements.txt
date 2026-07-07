@@ -8,3 +8,4 @@ gradio==6.8.0
 langgraph==1.0.10
 langgraph-checkpoint-sqlite==3.0.3
 python-dotenv==1.2.2
+langchain-tavily

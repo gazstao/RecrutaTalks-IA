@@ -6,7 +6,7 @@ import gradio as gr
 from langgraph.checkpoint.sqlite import SqliteSaver
 import sqlite3
 import uuid
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_tavily import TavilySearch
 from dotenv import load_dotenv
 import pprint
 
@@ -19,7 +19,7 @@ def get_date():
     """Obtem a data atual"""
     return datetime.now().strftime("%Y-%m-%d")
 
-search_tool = TavilySearchResults()
+search_tool = TavilySearch()
 
 conn = sqlite3.connect('chatbot_memory.db', check_same_thread=False)
 checkpointer = SqliteSaver(conn)
