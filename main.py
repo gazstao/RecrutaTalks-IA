@@ -17,14 +17,12 @@ load_dotenv()
 model = "gemma4:12b"  #model = "qwen3.5:9b"
 temperature = 0.7
 
+# ================== FERRAMENTAS (Tools) ==================
 def get_date():
     """Obtem a data atual"""
     return datetime.now().strftime("%Y-%m-%d")
 
-
-# ================== FERRAMENTAS (Tools) ==================
-# Ferramenta de busca na web (Tavily)
-search_tool = TavilySearch()
+search_tool = TavilySearch(max_results=10)
 
 # ================== MEMÓRIA PERSISTENTE ==================
 # Conecta ao banco SQLite para salvar o histórico das conversas
@@ -56,21 +54,11 @@ agent = create_agent(
 
 # ================== FUNÇÃO DE CHAT (Callback do Gradio) ==================
 def chat(message, history, thread_id):
-    """
-    Função chamada a cada mensagem enviada pelo usuário.
-    
-    Parâmetros:
-        message: texto enviado pelo usuário
-        history: histórico da conversa (gerenciado pelo Gradio)
-        thread_id: identificador único da conversa (para memória)
-    """
     # Configuração necessária para o LangGraph identificar a thread/conversa
     config = {"configurable": {"thread_id": thread_id}}
     
     # Invoca o agente com a mensagem do usuário
     response = agent.invoke({"messages": [{"role": "user", "content": message}]}, config)
-    
-    # Imprime a resposta completa no terminal (debug e compreensão do fluxo)
     pprint.pprint(response)
     
     # Extrai apenas o conteúdo da última mensagem do agente
@@ -111,22 +99,3 @@ demo.launch(
     server_port=7860,
     height=1000
 )
-
-# ================== CÓDIGO COMENTADO (VERSÃO ANTIGA) ==================
-# O bloco abaixo está comentado e representa uma versão anterior/simplificada
-# do código (mantido para referência):
-
-# with gr.Blocks() as demo:
-#    UniqueID =  lambda: str(uuid.uuid4())
-#    uid = UniqueID()
-#    print("Novo chat iniciado: ", uid)
-#    thread_id = gr.State(value = str(uid))
-#    gr.Markdown("## Chatbot com LangChain e Ollama <h6>"+ uid+"</h6>")
-#    gr.ChatInterface(fn=chat, additional_inputs=[thread_id])
-
-# def chat(message, history, thread_id):
-#    config = {"configurable": {"thread_id": thread_id}}
-#    response = agent.invoke({"messages": [{"role": "user", "content": message}]}, config)
-#    print(response)
-#    last_response = response['messages'][-1].content
-#    return last_response   
