@@ -53,7 +53,7 @@ python -m venv .venv
 # Windows:
 .\.venv\Scripts\activate
 # Linux/Mac:
-# source .venv/bin/activate
+source .venv/bin/activate
 
 # 4. Instale as dependências
 pip install --upgrade langchain langchain-core langgraph langchain-ollama langchain-community gradio python-dotenv tavily-python langgraph-checkpoint-sqlite langgraph-prebuilt langchain
