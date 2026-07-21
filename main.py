@@ -77,11 +77,9 @@ with gr.Blocks(title="Chatbot com Ollama", fill_height=True) as demo:
     # Armazena o thread_id no estado do Gradio
     thread_id = gr.State(value = str(uid))
 
-    # Cabeçalho da aplicação
+    # Interface de chat do Gradio
     gr.Markdown("# RecrutaTalks - Julho de 2026 - Chatbot com LangChain + Ollama")
     gr.Markdown(f"**ID da conversa:** {uid}")
-
-    # Interface de chat do Gradio
     gr.ChatInterface(
         fn=chat,                    # Função que será chamada a cada mensagem
         additional_inputs=[thread_id],  # Passa o thread_id para a função chat
